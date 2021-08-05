@@ -1,3 +1,5 @@
+import menu from "./menu.json";
+
 const themeSwitch = document.querySelector("#theme-switch-toggle");
 
 const body = document.querySelector("body");
@@ -29,4 +31,9 @@ themeSwitch.addEventListener("click", themeChange)
 
 const source = document.querySelector('#item-template').innerHTML.trim();
 const template = Handlebars.compile(source);
-const markup = template(menuData);
+
+const markup = template(menu);
+
+//console.log(markup)
+
+document.querySelector("#items-menu").innerHTML = markup;
